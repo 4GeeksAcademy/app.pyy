@@ -11,12 +11,12 @@ from pickle import load
 
 
 ##label_encoder_city_of_birth=load(open("./le_city_of_birth.sav", "rb"))
-label_encoder_country_of_birth=load(open("./le_country_of_birth.sav", "rb"))
-label_encoder_competition_id=load(open("./le_competition_id.sav", "rb"))
-label_encoder_club_name=load(open("./le_club_name.sav", "rb"))
-label_encoder_foot=load(open("./le_foot.sav", "rb"))
-label_encoder_sub_position=load(open("./le_sub_position.sav", "rb"))
-label_encoder_position=load(open("./le_position.sav", "rb"))
+label_encoder_country_of_birth=load(open("./src/le_country_of_birth.sav", "rb"))
+label_encoder_competition_id=load(open("./src/le_competition_id.sav", "rb"))
+label_encoder_club_name=load(open("./src/le_club_name.sav", "rb"))
+label_encoder_foot=load(open("./src/le_foot.sav", "rb"))
+label_encoder_sub_position=load(open("./src/le_sub_position.sav", "rb"))
+label_encoder_position=load(open("./src/le_position.sav", "rb"))
 
 def cargar_modelo_comprimido(ruta):
     """Carga el modelo comprimido con gzip."""
@@ -30,13 +30,13 @@ def cargar_modelo_comprimido(ruta):
 RUTA_MODELO = "./modelo.pkl.gz"
 
 # Intenta cargar el modelo
-try:
-    st.write("Cargando el modelo...")
-    model = cargar_modelo_comprimido(RUTA_MODELO)
-    st.success("Modelo cargado exitosamente.")
-except Exception as e:
-    st.error(f"Error al cargar el modelo: {str(e)}")
-    st.stop()  # Detiene la app si no se puede cargar el modelo
+#try:
+  #  st.write("Cargando el modelo...")
+   # model = cargar_modelo_comprimido(RUTA_MODELO)
+   # st.success("Modelo cargado exitosamente.")
+#except Exception as e:
+  #  st.error(f"Error al cargar el modelo: {str(e)}")
+   # st.stop()  # Detiene la app si no se puede cargar el modelo
 
 
 #@st.cache(persist=True)
@@ -103,10 +103,10 @@ country_of_birth_le = label_encoder_country_of_birth.transform([country_of_birth
 info=[matches_played, yellow_cards, red_cards, goals, assists, minutes_played, age, height_in_cm, highest_market_value_in_eur, competition_id_le, club_name_le, foot_le, position_le, sub_position_le, country_of_birth_le]
 
 
-if st.button("Realizar predicción"):
-    try:
-        # Supongamos que el modelo tiene un método predict
-        prediccion = model.predict(info)[0]
-        st.write(f"Predicción del modelo: {prediccion}")
-    except Exception as e:
-        st.error(f"Error al realizar la predicción: {str(e)}")
+#if st.button("Realizar predicción"):
+  #  try:
+   #     # Supongamos que el modelo tiene un método predict
+    #    prediccion = model.predict(info)[0]
+    #    st.write(f"Predicción del modelo: {prediccion}")
+   # except Exception as e:
+    #    st.error(f"Error al realizar la predicción: {str(e)}")
