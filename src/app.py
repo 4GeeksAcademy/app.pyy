@@ -29,13 +29,13 @@ def cargar_modelo_comprimido(ruta):
 RUTA_MODELO = "./modelo.pkl.gz"
 
 # Intenta cargar el modelo
-try:
-    st.write("Cargando el modelo...")
-    model = cargar_modelo_comprimido(RUTA_MODELO)
-    st.success("Modelo cargado exitosamente.")
-except Exception as e:
-    st.error(f"Error al cargar el modelo: {str(e)}")
-    st.stop()  # Detiene la app si no se puede cargar el modelo
+#try:
+   # st.write("Cargando el modelo...")
+   # model = cargar_modelo_comprimido(RUTA_MODELO)
+    #st.success("Modelo cargado exitosamente.")
+#except Exception as e:
+   # st.error(f"Error al cargar el modelo: {str(e)}")
+   # st.stop()  # Detiene la app si no se puede cargar el modelo
 
 
 #@st.cache(persist=True)
@@ -102,11 +102,11 @@ city_of_birth_le = label_encoder_city_of_birth.transform([city_of_birth])[0]
 info=[matches_played, yellow_cards, red_cards, goals, assists, minutes_played, age, height_in_cm, highest_market_value_in_eur, competition_id_le, club_name_le, foot_le, position_le, sub_position_le, country_of_birth_le,  city_of_birth_le]
 
 
-if st.button("Realizar predicción"):
-    try:
-        # Supongamos que el modelo tiene un método predict
-        prediccion = model.predict(info)[0]
-        st.write(f"Predicción del modelo: {prediccion}")
-    except Exception as e:
-        st.error(f"Error al realizar la predicción: {str(e)}")
+#if st.button("Realizar predicción"):
+   # try:
+    #    # Supongamos que el modelo tiene un método predict
+    #    prediccion = model.predict(info)[0]
+    #    st.write(f"Predicción del modelo: {prediccion}")
+  #  except Exception as e:
+ #       st.error(f"Error al realizar la predicción: {str(e)}")
 
