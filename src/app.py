@@ -50,7 +50,7 @@ def load_data(file_path):
     return df
 
 # Cargar diferentes datasets según la necesidad
-df_city = load_data("./df_city.csv")
+#df_city = load_data("./df_city.csv")
 df_club_name = load_data("./df_club_name.csv")
 df_comp_id = load_data("./df_comp_id.csv")
 df_country = load_data("./df_country.csv")
