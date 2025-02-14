@@ -17,10 +17,15 @@ label_encoder_foot=load(open("./le_foot.sav", "rb"))
 label_encoder_sub_position=load(open("./le_sub_position.sav", "rb"))
 label_encoder_position=load(open("./le_position.sav", "rb"))
 
-@st.cache(persist=True)
+@st.cache_data(persist=True)  # Cambia st.cache a st.cache_data
 def load_data(file_path):
     df = pd.read_csv(file_path)
     return df
+
+#@st.cache(persist=True)
+#def load_data(file_path):
+#    df = pd.read_csv(file_path)
+#    return df
 
 # Cargar diferentes datasets según la necesidad
 #df_city = load_data("./df_city.csv")
@@ -122,11 +127,11 @@ elif st.session_state.page == "completar_datos":
 
 #ESTO ESTABA ANTES, COMO TÍTULO
 
-st.markdown('<style>description{color:blue;}</style>', unsafe_allow_html=True)
-st.title('Prediccin de el valor de mercado de un jugador de fútbol')
-st.markdown("<description> Descripcion a gusto </description>", unsafe_allow_html=True)
+#st.markdown('<style>description{color:blue;}</style>', unsafe_allow_html=True)
+#st.title('Prediccin de el valor de mercado de un jugador de fútbol')
+#st.markdown("<description> Descripcion a gusto </description>", unsafe_allow_html=True)
 # Agregar un título a la barra lateral
-st.sidebar.title('Selecciona los parámetros para analizar la predicción de el valor de mercado de un futbolista')
+#st.sidebar.title('Selecciona los parámetros para analizar la predicción de el valor de mercado de un futbolista')
 
 #HASTA ACA
 
