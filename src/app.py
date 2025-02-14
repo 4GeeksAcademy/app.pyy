@@ -8,7 +8,8 @@ from joblib import load
 import os
 from pickle import load
 
-
+print("Current working directory:", os.getcwd())
+print("Files in current directory:", os.listdir(os.getcwd()))
 
 
 ##label_encoder_city_of_birth=load(open("./le_city_of_birth.sav", "rb"))
@@ -19,8 +20,8 @@ label_encoder_foot=load(open("./le_foot.sav", "rb"))
 label_encoder_sub_position=load(open("./le_sub_position.sav", "rb"))
 label_encoder_position=load(open("./le_position.sav", "rb"))
 
-model = load("/workspaces/app.pyy/src/modelo.joblib")
-print("Modelo cargado correctamente.")
+#model = load("/workspaces/app.pyy/src/modelo.joblib")
+#print("Modelo cargado correctamente.")
 
 #def cargar_modelo_comprimido(ruta):
 #    """Carga el modelo comprimido con gzip."""
@@ -49,7 +50,7 @@ def load_data(file_path):
     return df
 
 # Cargar diferentes datasets según la necesidad
-#df_city = load_data("./df_city.csv")
+df_city = load_data("./df_city.csv")
 df_club_name = load_data("./df_club_name.csv")
 df_comp_id = load_data("./df_comp_id.csv")
 df_country = load_data("./df_country.csv")
@@ -107,10 +108,10 @@ country_of_birth_le = label_encoder_country_of_birth.transform([country_of_birth
 info=[matches_played, yellow_cards, red_cards, goals, assists, minutes_played, age, height_in_cm, highest_market_value_in_eur, competition_id_le, club_name_le, foot_le, position_le, sub_position_le, country_of_birth_le]
 
 
-if st.button("Realizar predicción"):
-    try:
-        # Supongamos que el modelo tiene un método predict
-        prediccion = model.predict(info)[0]
-        st.write(f"Predicción del modelo: {prediccion}")
-    except Exception as e:
-        st.error(f"Error al realizar la predicción: {str(e)}")
+#if st.button("Realizar predicción"):
+ #   try:
+ #       # Supongamos que el modelo tiene un método predict
+ #       prediccion = model.predict(info)[0]
+ #       st.write(f"Predicción del modelo: {prediccion}")
+ #   except Exception as e:
+ #       st.error(f"Error al realizar la predicción: {str(e)}")
