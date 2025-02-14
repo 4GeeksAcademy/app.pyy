@@ -19,7 +19,7 @@ label_encoder_foot=load(open("./le_foot.sav", "rb"))
 label_encoder_sub_position=load(open("./le_sub_position.sav", "rb"))
 label_encoder_position=load(open("./le_position.sav", "rb"))
 
-model = load("src/modelo.joblib")
+model = load("/workspaces/app.pyy/src/modelo.joblib")
 print("Modelo cargado correctamente.")
 
 #def cargar_modelo_comprimido(ruta):
